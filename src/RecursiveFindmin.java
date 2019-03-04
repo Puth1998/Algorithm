@@ -1,6 +1,6 @@
 public class RecursiveFindmin {
 	public static void main(String[] args) {
-		  int A[] = {16, 4, 45, 6, 50, 10, 2}; 
+		  int A[] = {16, 4, -45, 6, 50, 10, 2}; 
 //	        int n = A.length; 
 	          
 	        // Function calling 
