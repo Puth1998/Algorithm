@@ -35,13 +35,28 @@ public class findGCD {
 		System.out.print(" New Factor element 2 is :");
 		output(primeFactor2);
 		
+
 //		compareFactor(primeFactor1,primeFactor2);
+		ArrayList compare = new ArrayList();
+		
+/*
 		System.out.println();
 		System.out.println(" [ Factor of element 1 is ] ");
-		compareFactor(factor1,primeFactor1);
+		compare1 = compareFactor(factor1,primeFactor1);
 		System.out.println();
 		System.out.println(" [ Factor of element 1 is ] ");
-		compareFactor(factor2,primeFactor2);
+*/
+		
+		
+		//compare = 
+		compareFactor(primeFactor1,primeFactor2,factor1,factor2);
+		
+		
+//		FindCompare(compare1, compare1);
+		
+		
+		
+		 
 		
 	}
 	// หาจำนวนเฉพาะที่หารลงตัว
@@ -82,10 +97,30 @@ public class findGCD {
 			}else i++;
 			check=element/check;
 		}while(check!=0);	
+		
 		return primeFactor;	
 	}
-
-	public static void compareFactor(ArrayList div,ArrayList b) {
+	
+	public static  void compareFactor(ArrayList e1,ArrayList e2,ArrayList f1,ArrayList f2) {
+		ArrayList commonF=new ArrayList();
+		int j=0,sum=1,i=0;
+		while(i<e1.size()) {
+			
+			while(e1.get(i)==e2.get(j)){
+				sum*=(int)e1.get(i);
+				j+=1;
+				if(j>e2.size()-1)
+					j=0;					
+			};
+			commonF.add(sum);
+			
+			i+=1;
+		}
+		System.out.println();
+		System.out.println("GCD is "+sum/2 );
+	}
+/*
+	public static  ArrayList compareFactor(ArrayList div,ArrayList b) {
 		ArrayList commonFactor=new ArrayList();
 		int j=0,sum=0,i=0;
 		while(i<div.size()) {
@@ -101,9 +136,33 @@ public class findGCD {
 			i+=1;
 		}	
 		output(commonFactor);
+		return(commonFactor);
 			
 	}
+*/
 	
+/*
+	public static void FindCompare(ArrayList a, ArrayList b) {
+		ArrayList sameFactor=new ArrayList();
+		int max,check1,check2,sum=1,temp;
+		if(a.size()>b.size())
+			max = a.size();
+		else max = b.size();
+		
+		for(int i=0; i<max; i++) {
+			if((a.get(i)==b.get(i))&&((int) a.get(i)!=0||(int)b.get(i)!=0)) {
+				if((int)a.get(i)>(int)b.get(i)) {
+					sum*=(int) Math.pow(2,(int)b.get(i));
+				}
+				
+			}
+				
+		}
+		System.out.println();
+		System.out.println("GCD is : "+sum);
+		
+	}
+*/	
 
 	
 }
